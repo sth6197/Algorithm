@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\PC\\Desktop\\Program\\",
+  "WorkspaceRootPath": "C:\\Users\\PC\\Desktop\\Algorithm\\Program\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{85D7A77E-B2B3-45A2-8D3D-8D8E63092624}|Program.vcxproj|C:\\Users\\PC\\Desktop\\Program\\Program.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{85D7A77E-B2B3-45A2-8D3D-8D8E63092624}|Program.vcxproj|C:\\Users\\PC\\Desktop\\Algorithm\\Program\\Program.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{85D7A77E-B2B3-45A2-8D3D-8D8E63092624}|Program.vcxproj|solutionrelative:Program.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -24,11 +24,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cpp",
-              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Program\\Program.cpp",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Algorithm\\Program\\Program.cpp",
               "RelativeDocumentMoniker": "Program.cpp",
-              "ToolTip": "C:\\Users\\PC\\Desktop\\Program\\Program.cpp",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\Algorithm\\Program\\Program.cpp",
               "RelativeToolTip": "Program.cpp",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABQAAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-07-11T09:04:19.84Z",
               "EditorCaption": ""
