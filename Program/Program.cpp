@@ -4,45 +4,75 @@ using namespace std;
 
 #define SIZE 8
 
-void BinarySearch(int list[], int key)
+int quick(int list[], int left, int right)
 {
-    int left = 0;
-    int right = SIZE - 1;
-
-    while (left <= right)
+    if (left >= right)
     {
-        int pivot = (left + right) / 2;
+        return list[left];
+    }
 
-        if (list[pivot] == key)
+    int pivot = left;
+    int qleft = left + 1;
+    int qright = right;
+
+    int swap;
+
+    while (qleft <= qright)
+    {
+        while (qleft <= right && list[qleft] <= list[pivot])
         {
-            cout << "key Found : " << list[pivot] << endl;
-            return;
+            qleft++;
         }
-        else if (list[pivot] > key)
+        
+        while (qright > left && list[qright] >= list[pivot])
         {
-            right = pivot - 1;
+            qright--;
+        }
+
+        if(qleft > qright)
+        {
+            swap = list[qright];
+            list[qright] = list[pivot];
+            list[pivot] = swap;
         }
         else
         {
-            left = pivot + 1;
+            swap = list[qleft];
+            list[qleft] = list[qright];
+            list[qright] = swap;
         }
     }
 
-    cout << "Not key Found" << endl;
+    quick(list, left, qright - 1);
+    quick(list, qright + 1, right);
 }
+
 
 int main()
 {
-#pragma region 이진 탐색
-    // 탐색 범위를 반으로 나누어 찾는 값을 포함하는 범위를
-    // 좁혀나가는 방식으로 동작하는 탐색 알고리즘입니다.
+#pragma region 퀵 정렬
+    // 기준점을 획득한 다음 해당 기준점을 기준으로
+    // 배열을 나누고 한 쪽에는 기준점보다 작은 값들이
+    // 위치하고 다른 한 쪽에는 기준점보다 큰 값들이 위치하도록
+    // 정렬하는 알고리즘입니다.
 
-    int list[SIZE] = { 5,6,11,13,27,55,66,99 };
+    // 나누어진 하위 배열에 대해 재귀적으로 퀵 정렬을 호출하여
+    // 모든 배열이 기본 배열이 될 때까지 반복하면서 정렬합니다.
 
-    BinarySearch(list, 56);
+    int list[SIZE] = { 2, 6, 8, 10, 3, 4, 5, 9 };
 
+    quick(list, 0, SIZE - 1);
+
+    for(int i = 0; i < SIZE; i++)
+    {
+        cout << list[i] << ' ';
+    }
+    
 
 #pragma endregion
+
+
+
 
 
     return 0;
