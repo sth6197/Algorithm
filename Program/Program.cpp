@@ -2,21 +2,24 @@
 
 using namespace std;
 
-#define SIZE 7
 
 int main()
 {
-#pragma region 쉘 정렬
-    // 먼 거리의 요소들을 먼저 정렬하여 배열을 부분적으로
-    // 정렬한 후, 점진적으로 더 작은 간격을 사용하는 정렬 알고리즘입니다.
-#pragma endregion
+    int a = 0;
+    int b = 0;
 
-    int list[SIZE] = { 10, 8, 6, 20, 4, 3, 22 };
+    int c = 0;
 
-    int gap = SIZE / 2;
-    int key = 0;
+    cin >> a >> b;
+
+    while (b != 0)
+    {
+        c = a % b;
+        a = b;
+        b = c;
+    }
     
-
+    cout << "최대공약수 : " << a, b;
 
 
     return 0;
