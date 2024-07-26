@@ -25,8 +25,6 @@ public:
     {
         graph[vertex].push_back(edge);
         graph[edge].push_back(vertex);
-
-        cout << vertex << " " << edge << endl;
     }
 
     void Search(int start)
