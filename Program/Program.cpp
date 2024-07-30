@@ -1,4 +1,6 @@
 ﻿#include <iostream>
+#include <vector>
+#include <algorithm>
 
 using namespace std;
 
@@ -7,8 +9,45 @@ using namespace std;
 class Graph
 {
 private:
-    int parent[SIZE];
+    class Edge
+    {
+    private:
+        int x;
+        int y;
+        int distance;
 
+    public:
+        Edge(int x, int y, int distance)
+        {
+            this->x = x;
+            this->y = y;
+            this->distance = distance;
+        }
+
+        bool operator < (Edge edge)
+        {
+            return this->distance < edge.distance;
+        }
+
+        int& X()
+        {
+            return x;
+        }
+
+        int& Y()
+        {
+            return y;
+        }
+
+        int& Distance()
+        {
+            return distance;
+        }
+    };
+
+    vector<Edge> graph;
+    
+    int parent[SIZE];
 
 public:
     Graph()
@@ -19,59 +58,53 @@ public:
         }
     }
 
-    int Find(int x)
+    void Insert(int x, int y, int distance)
     {
-        if (parent[x] == x)
-        {
-            return x;
-        }
-
-        return Find(parent[x]);
+        graph.push_back(Edge(x, y, distance));
     }
 
-    void Union(int x, int y)
+    void Kruskal()
     {
-        x = Find(x);
-        y = Find(y);
-        
-        if (x != y)
-        {
-            if (x > y)
-            {
-                parent[y] = x;
-            }
-            else
-            {
-                parent[x] = y;
-            }
-        }
-    }
+        sort(graph.begin(), graph.end());
 
-    bool Same(int x, int y)
-    {
-        return Find(x) == Find(y);
+
+
+
     }
 };
 
 int main()
 {
-#pragma region 유니온 파인드
-    // 여러 노드가 존재할 때 어떤 노드가 다른 노드와 연결되어
-    // 있는지 확인하는 알고리즘입니다.
+#pragma region 신장 트리
+    // 그래프의 모든 정점을 포함하면서 사이클이 존재하지 않는
+    // 부분 그래프로, 그래프의 모든 정점을 최소 비용으로 연결하는 트리입니다.
 
-    // 유니온 파인드의 시간 복잡도
-    // O(MlogN) : M 은 연산의 개수, N 은 노드의 개수
-    // M 이 N² 에 가까울 때는 O(N²logN)이 됩니다. 
+    // 그래프의 정점의 수가 n개일 때, 간선의 수는 n-1개 입니다.
 
-    Graph graph;
+    // 최소 비용 신장 트리
+    // 그래프의 간선들의 가중치 합이 최소인 신장 트리
 
-    graph.Union(1, 3);
-    graph.Union(2, 3);
-    
-    cout << graph.Same(1, 3), graph.Same(2, 3);
+    Graph edge;
+
+    edge.Insert(1, 7, 10);
+    edge.Insert(1, 4, 28);
+    edge.Insert(1, 2, 66);
+    edge.Insert(1, 5, 19);
+
+    edge.Insert(2, 4, 25);
+    edge.Insert(2, 5, 60);
+
+    edge.Insert(3, 5, 21);
+    edge.Insert(3, 6, 35);
+
+    edge.Insert(4, 7, 15);
+
+    edge.Insert(5, 6, 40);
+
 
 
 #pragma endregion
+
 
 
 
