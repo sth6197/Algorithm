@@ -1,2 +1,2 @@
 ﻿  Program.cpp
-  Program.vcxproj -> C:\Users\PC\Desktop\Algorithm\Program\x64\Debug\Program.exe
+C:\Users\PC\Desktop\Algorithm\Program\Program.cpp(94,4): error C2679: 이항 '<<': 오른쪽 피연산자로 'void' 형식을 사용하는 연산자가 없거나 허용되는 변환이 없습니다.
